@@ -1,31 +1,33 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 
-import * as pjson from '../../../package.json'
+import * as StateActions from '../../Actions/state'
+// import LandingPage from '../ContentContainer/LandingPage';
+import ContentContainer from '../ContentContainer/ContentContainer';
 
 class App extends Component {
+
+
+    handleWindowResize = () => {
+        this.props.updateWindowSize(window.innerWidth, window.innerHeight)
+    }
+    
+    componentDidMount() {
+        this.handleWindowResize()
+        window.addEventListener('resize', this.handleWindowResize);
+    }
+    
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowResize);
+    }
+
+
     render() {
         return (
             <div>
-                <h1
-                    style={{textAlign:"center", marginBottom:"2px"}}
-                >
-                    <code>
-                        react-redux-boilerplate
-                    </code>
-                </h1>
-
-                <p
-                    style={{textAlign:"center", marginTop:"2px"}}
-                >
-                    <code>@{pjson.version}</code>
-                </p>
-
-                <p
-                    style={{textAlign:"center"}}
-                >
-                    If you're seeing this, everything is working!
-                </p>
+ 
+                <ContentContainer/>
+                
             </div>
         );
     }
@@ -36,7 +38,9 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-    return {}
+    return {
+        updateWindowSize: (x,y) => dispatch(StateActions.updateWindowSize(x,y))
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

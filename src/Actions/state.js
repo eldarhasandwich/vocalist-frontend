@@ -1,7 +1,8 @@
 
-export function exampleAction (example) {
+export function updateWindowSize (newWidth, newHeight) {
     return {
-        type: "EXAMPLE_ACTION",
-        example
+        type: "UPDATE_WINDOW_SIZE",
+        newWidth,
+        newHeight
     }
 }
