@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 
+import MenuIcon from '@material-ui/icons/Menu';
+
 import {
     AppBar,
     Toolbar,
     Typography,
     Hidden,
     Drawer,
-    Button,
+    IconButton,
 } from '@material-ui/core';
 import NavigationMenu from './NavigationMenu';
 
@@ -32,17 +34,18 @@ class ContentContainer extends Component {
             <div className="ContentContainer">
 
                 <AppBar position="static">
-                    <Hidden mdUp>
-                        <Button
-                            onClick={this.handleDrawerToggle}
-                        >
-                            Menu
-                        </Button>
-                    </Hidden>
-
                     <Toolbar>
-                        <Typography variant="title" color="inherit">
-                            Welcome to Vocalist
+                        <Hidden mdUp>
+                            <IconButton
+                                onClick={this.handleDrawerToggle}
+                                color="inherit"
+                            >
+                                <MenuIcon/>
+                            </IconButton>
+                        </Hidden>
+
+                        <Typography variant="title" color="inherit" noWrap>
+                            Vocalist
                         </Typography>
                     </Toolbar>
                 </AppBar>
