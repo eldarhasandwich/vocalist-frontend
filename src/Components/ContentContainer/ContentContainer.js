@@ -12,6 +12,7 @@ import {
     IconButton,
 } from '@material-ui/core';
 import NavigationMenu from './NavigationMenu';
+import TestContent from '../TestContent';
 
 class ContentContainer extends Component {
 
@@ -67,7 +68,8 @@ class ContentContainer extends Component {
                     <NavigationMenu/>
                 </Hidden>
 
-                {/*Content goes here*/}
+                {/*Content goes here*/} 
+
 
             </div>
         );

@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import { List, ListItem, ListItemText } from '@material-ui/core';
 
 class NavigationMenu extends Component {
+
     render() {
         return (
             <div 
@@ -23,7 +24,6 @@ class NavigationMenu extends Component {
                     <ListItem button>
                         <ListItemText primary="ItemFour"/>
                     </ListItem>
-
 
                 </List>
             </div>
