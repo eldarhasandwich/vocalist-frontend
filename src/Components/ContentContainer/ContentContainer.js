@@ -67,11 +67,11 @@ class ContentContainer extends Component {
                     </Hidden>
 
                     <Grid container spacing={20}>
-                        <Grid item sm={12} md={3}>
-                            <Hidden smDown>
+                        <Hidden smDown>
+                            <Grid item sm={12} md={3}>
                                 <NavigationMenu/>
-                            </Hidden>
-                        </Grid>
+                            </Grid>
+                        </Hidden>
 
                         <Grid item sm={12} md={9}>
                             <div style={{width:"95%", margin:"auto"}}>
