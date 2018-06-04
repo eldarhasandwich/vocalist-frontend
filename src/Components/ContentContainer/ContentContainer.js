@@ -10,6 +10,7 @@ import {
     Hidden,
     Drawer,
     IconButton,
+    Grid,
 } from '@material-ui/core';
 import NavigationMenu from './NavigationMenu';
 import TestContent from '../TestContent';
@@ -51,25 +52,34 @@ class ContentContainer extends Component {
                     </Toolbar>
                 </AppBar>
 
-                <Hidden mdUp>
-                    <Drawer
-                        variant="temporary"
-                        open={this.state.drawerOpen}
-                        onClose={this.handleDrawerToggle}
-                        ModalProps={{
-                            keepMounted: true, // Better open performance on mobile.
-                        }}
-                    >
-                        <NavigationMenu/>
-                    </Drawer>
-                </Hidden>
+                <div style={{width:"99%", margin:"auto"}}>
+                    <Hidden mdUp>
+                        <Drawer
+                            variant="temporary"
+                            open={this.state.drawerOpen}
+                            onClose={this.handleDrawerToggle}
+                            ModalProps={{
+                                keepMounted: true, // Better open performance on mobile.
+                            }}
+                        >
+                            <NavigationMenu/>
+                        </Drawer>
+                    </Hidden>
 
-                <Hidden smDown>
-                    <NavigationMenu/>
-                </Hidden>
+                    <Grid container spacing={20}>
+                        <Grid item sm={12} md={3}>
+                            <Hidden smDown>
+                                <NavigationMenu/>
+                            </Hidden>
+                        </Grid>
 
-                {/*Content goes here*/} 
-
+                        <Grid item sm={12} md={9}>
+                            <div style={{width:"95%", margin:"auto"}}>
+                                <TestContent/> 
+                            </div>
+                        </Grid>
+                    </Grid>
+                </div>
 
             </div>
         );

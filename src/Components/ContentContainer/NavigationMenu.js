@@ -37,7 +37,7 @@ class NavigationMenu extends Component {
         return (
             <div 
                 className="NavMenu"
-                style={{maxWidth:"360px"}}    
+                style={{}}    
             >
                 <List component="nav">
 
